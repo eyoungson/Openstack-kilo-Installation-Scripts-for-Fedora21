@@ -1,0 +1,61 @@
+#
+# node type
+# controller or network or compute
+#
+node_type=compute
+
+#
+# controller node information
+#
+controller_name=controller
+controller_ip=192.168.1.11
+
+#
+# network node information
+#
+network_name=network
+network_ip=192.168.1.21
+
+#
+# compute nodes information
+compute1_ip=192.168.1.31
+
+#
+# node information
+#
+# host_name=controller
+password="zxcv!@34"
+
+#
+# management network interface information
+#
+mgmt_net_if=enp1s0f0
+ip_addr=192.168.1.31
+prefix=24
+gateway_addr=192.168.1.1
+
+#
+# tenant network interface information
+#
+tenant_net_if=enp1s0f1
+tenant_ip_addr=10.0.1.31
+tenant_prefix=24
+
+TENANT_NETWORK_CIDR=192.168.1.0/24
+DNS_RESOLVER=8.8.8.8
+TENANT_NETWORK_GATEWAY=192.168.0.1
+
+#
+# external network interface information
+#
+external_net_if=
+
+EXTERNAL_NETWORK_CIDR=203.0.113.0/24
+FLOATING_IP_START=203.0.113.101
+FLOATING_IP_END=203.0.113.200
+EXTERNAL_NETWORK_GATEWAY=203.0.113.1
+
+#
+# NTP server name
+#
+ntp_server_name=time.bora.net
