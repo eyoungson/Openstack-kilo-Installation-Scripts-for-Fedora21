@@ -107,7 +107,7 @@ then
    sed -i '/^\[DEFAULT\]/a auth_strategy=keystone' /etc/nova/nova.conf
    sed -i '/^\[keystone_authtoken\]/a auth_uri=http://controller:5000\nauth_url=http://controller:35357\nauth_plugin=password\nproject_domain_id=default\nuser_domain_id=default\nproject_name=service\nusername=nova\npassword='$password /etc/nova/nova.conf
    sed -i '/^\[DEFAULT\]/a my_ip='$ip_addr /etc/nova/nova.conf
-   sed -i '/^\[DEFAULT\]/a vnc_enabled=True\nvncserver_listen=0.0.0.0\nvncproxyclient_address='$ip_addr'\nnovncproxy_base_url=http://controller:6080/vnc_auto.html' /etc/nova/nova.conf
+   sed -i '/^\[DEFAULT\]/a vnc_enabled=True\nvncserver_listen=0.0.0.0\nvncserver_proxyclient_address='$ip_addr'\nnovncproxy_base_url=http://'$controller_ip':6080/vnc_auto.html' /etc/nova/nova.conf
    sed -i '/^\[glance\]/a host=controller' /etc/nova/nova.conf
    sed -i '/^\[oslo_concurrency\]/a lock_path=/var/lib/nova/tmp' /etc/nova/nova.conf
    sed -i '/^\[DEFAULT\]/a verbose=True' /etc/nova/nova.conf
