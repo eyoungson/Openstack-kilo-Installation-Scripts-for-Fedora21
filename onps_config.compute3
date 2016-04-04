@@ -1,0 +1,87 @@
+# this file contains basic system and network information 
+# The user need to enter each of the items below in order to correctly install Openstack node
+
+# node type, choose one from two types:
+#	 controller or compute
+node_type=compute
+
+# for compute node, select one the ovs type:
+# #       ovs (regular ovs)
+# #       ovs-dpdk (accelerated ovs)
+ovs_type=ovs-dpdk
+
+# controller node information - this will be used by all nodes, including compute node 
+controller_name=controller
+controller_ip=192.168.1.11
+
+# host name - this is used to configure node's host name 
+host_name=compute3
+
+# network interface (e.g, em1) - for management network, using static address
+# enter IP address and netmask for this interface
+mgmt_net_if=enp1s0f0
+ip_addr=192.168.1.51
+net_mask=255.255.255.0
+
+# network interface (e.g., em2)- for Internet network, it will have dhcp address
+inter_net_if=enp4s0f0
+
+# network interface (e.g., p1p1)- for private virtual network, it will have no address
+virtual_net_if=enp1s0f1
+
+# network interface (e.g., p1p2)- for public network, it will have no address
+public_net_if=
+
+# NTP server name or IP address
+ntp_server_name=time.bora.net
+
+# HTTP proxy server setting 
+ONPS_HTTP_PROXY=
+ONPS_HTTP_PROXY_PORT=
+
+# HTTPS proxy server setting 
+ONPS_HTTPS_PROXY=
+ONPS_HTTPS_PROXY_PORT=
+
+# FTP proxy server setting 
+#ONPS_FTP_PROXY=<FTP proxy>
+#ONPS_FTP_PROXY_PORT=<proxy port number>
+
+# No-proxy 
+NO_PROXY=
+
+# No-GIT-proxy server(s) 
+NO_GIT_PROXY=
+
+# user to choose one of the kernel options:
+# The following options are available, select one 'kernel_to_use' below:
+#     kernel_to_use=specific (user to determine a specific kernel)
+#     kernel_to_use=realtime (user to determine a realtime kernel)
+#     kernel_to use=latest (the latest available kernel, obtained from from yum update)   
+#     kernel_to_use=inbox (in-box kernel from OS installation)
+#
+# if using inbox kernel, uncomment next line and comment out lines for default setup, kernel_to_use=specific
+#    kernel_to_use=inbox 
+#
+# if using latest kernel, uncomment next line and comment out lines for default setup, kernel_to_use=specific
+#    kernel_to_use=latest 
+#
+# if using a realtime kernel, uncomment the following 3 lines and provide kernel version and comment out line for default setup, kernel_to_use=specific
+#    kernel_to_use="realtime"
+#    version="v3.14.36-rt34"
+#    kernelURL="https://www.kernel.org/pub/scm/linux/kernel/git/rt/linux-stable-rt.git"
+#
+# if using a specific kernel, provide kernel version and download URL. Note that the following is default setup
+kernel_to_use="specific"
+version="3.18.8-201.fc21.x86_64"
+kernelURL="https://kojipkgs.fedoraproject.org//packages/kernel/3.18.8/201.fc21/x86_64"
+
+# ovs git tag, dpdk tag, datapath type, change to the desired values 
+ovs_git_tag=b8e57534ece5f620af7d7fa0278c8e9746dd719c
+ovs_dpdk_git_tag="v1.8.0"
+ovs_datapath_type=netdev
+
+# use specific commit IDs for devstack components or use latest codes
+#  use_commit_id=no (will use the latest devstack codes for all components)
+#  use_commit_id=yes (will check out specic commit ID for each of the devstack components)
+use_commit_id=no
