@@ -1,0 +1,108 @@
+#
+# node type
+# controller or network or compute
+#
+node_type=compute
+
+#
+# network type
+# gre or vlan
+network_type=vlan
+
+#
+# controller node information
+#
+controller_name=controller
+controller_ip=192.168.1.11
+
+#
+# network node information
+#
+network_name=network
+network_ip=192.168.1.21
+
+#
+# compute nodes information
+compute1_ip=192.168.1.31
+compute2_ip=192.168.1.41
+compute3_ip=192.168.1.51
+
+#
+# node information
+#
+# host_name=controller
+password="zxcv!@34"
+
+#
+# management network interface information
+#
+mgmt_net_if=enp1s0f0
+ip_addr=192.168.1.41
+prefix=24
+gateway_addr=192.168.1.1
+
+#
+# tenant network interface information
+#
+tenant_net_if=enp1s0f1
+tenant_ip_addr=10.0.1.41
+tenant_prefix=24
+
+TENANT_NETWORK_CIDR=192.168.0.0/24
+DNS_RESOLVER=8.8.8.8
+TENANT_NETWORK_GATEWAY=192.168.0.1
+
+#
+# external network interface information
+#
+external_net_if=
+
+EXTERNAL_NETWORK_CIDR=203.0.113.0/24
+FLOATING_IP_START=203.0.113.101
+FLOATING_IP_END=203.0.113.200
+EXTERNAL_NETWORK_GATEWAY=203.0.113.1
+
+#
+# NTP server name
+#
+ntp_server_name=time.bora.net
+
+# added for ONPS based compute node
+# for compute node, select one the ovs type:
+# #       ovs (regular ovs)
+# #       ovs-dpdk (accelerated ovs)
+ovs_type=ovs
+
+# user to choose one of the kernel options:
+# The following options are available, select one 'kernel_to_use' below:
+#     kernel_to_use=specific (user to determine a specific kernel)
+#     kernel_to_use=realtime (user to determine a realtime kernel)
+#     kernel_to use=latest (the latest available kernel, obtained from from yum update)
+#     kernel_to_use=inbox (in-box kernel from OS installation)
+#
+# if using inbox kernel, uncomment next line and comment out lines for default setup, kernel_to_use=specific
+#    kernel_to_use=inbox
+#
+# if using latest kernel, uncomment next line and comment out lines for default setup, kernel_to_use=specific
+#    kernel_to_use=latest
+#
+# if using a realtime kernel, uncomment the following 3 lines and provide kernel version and comment out line for default setup, kernel_to_use=specific
+#    kernel_to_use="realtime"
+#    version="v3.14.36-rt34"
+#    kernelURL="https://www.kernel.org/pub/scm/linux/kernel/git/rt/linux-stable-rt.git"
+#
+# if using a specific kernel, provide kernel version and download URL. Note that the following is default setup
+kernel_to_use="specific"
+version="3.18.8-201.fc21.x86_64"
+kernelURL="https://kojipkgs.fedoraproject.org//packages/kernel/3.18.8/201.fc21/x86_64"
+
+# ovs git tag, dpdk tag, datapath type, change to the desired values
+ovs_git_tag=b8e57534ece5f620af7d7fa0278c8e9746dd719c
+ovs_dpdk_git_tag="v1.8.0"
+ovs_datapath_type=netdev
+
+# use specific commit IDs for devstack components or use latest codes
+#  use_commit_id=no (will use the latest devstack codes for all components)
+#  use_commit_id=yes (will check out specic commit ID for each of the devstack components)
+use_commit_id=yes
+
