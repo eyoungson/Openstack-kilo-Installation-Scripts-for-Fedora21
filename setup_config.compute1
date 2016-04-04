@@ -5,6 +5,11 @@
 node_type=compute
 
 #
+# network type
+# gre or vlan
+network_type=vlan
+
+#
 # controller node information
 #
 controller_name=controller

@@ -125,6 +125,7 @@ systemctl disable NetworkManager.service
 chkconfig network on
 
 ifup $mgmt_net_if 
+ifup $tenant_net_if 
 
 #
 # verify mgmt_net_if
